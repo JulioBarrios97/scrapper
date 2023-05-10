@@ -8,6 +8,8 @@ const app = express();
 
 const client = new MongoClient(process.env.MONGODB_URI);
 
+const port = process.env.PORT || 3000;
+
 // Configura Handlebars como motor de plantillas
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
@@ -34,6 +36,6 @@ app.get("/", async (req, res) => {
 
 init();
 
-app.listen(3000, () => {
-  console.log("Servidor iniciado en el puerto 3000");
+app.listen(port, () => {
+  console.log(`Servidor iniciado en el puerto ${port}`);
 });
