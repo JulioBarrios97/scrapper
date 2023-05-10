@@ -21,10 +21,12 @@ async function init() {
       const g = $(el).find("td:nth-child(4)").text();
       const e = $(el).find("td:nth-child(5)").text();
       const p = $(el).find("td:nth-child(6)").text();
+      const gf = $(el).find("td:nth-child(8)").text();
+      const gc = $(el).find("td:nth-child(9)").text();
       const pts = $(el).find("td:nth-child(7)").text();
 
       // Crea una instancia del modelo con los datos obtenidos
-      const newData = new Data({ teamName, pj, g, e, p, pts });
+      const newData = new Data({ teamName, pj, g, e, p, gf, gc, pts });
       newDataArray.push(newData);
     });
 

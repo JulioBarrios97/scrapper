@@ -30,10 +30,55 @@
         background-color: #f2f2f2;
       }
 
+      table tr:nth-child(-n+4) {
+        background-color: #a5c7a6;
+        color: white;
+      }
+
+      table tr:nth-last-child(-n+4) {
+        background-color: #eca9a4;
+        color: white;
+      }
+
       /* Estilos generales */
       body {
         background-color: #f1f1f1;
         font-family: Arial, sans-serif;
+      }
+
+      /* Estilos para pantallas de menor tamaño */
+      @media only screen and (max-width: 768px) {
+        table {
+          width: 100%;
+        }
+
+        td:nth-of-type(1),
+        td:nth-of-type(2),
+        td:nth-of-type(3),
+        td:nth-of-type(4),
+        td:nth-of-type(5),
+        td:nth-of-type(8) {
+          display: table-cell;
+        }
+
+        td:nth-of-type(6),
+        td:nth-of-type(7) {
+          display: none;
+        }
+
+        th:nth-of-type(1),
+        th:nth-of-type(2),
+        th:nth-of-type(3),
+        th:nth-of-type(4),
+        th:nth-of-type(5),
+        th:nth-of-type(8) {
+          display: table-cell;
+        }
+
+        th:nth-of-type(6),
+        th:nth-of-type(7) {
+          display: none;
+        }
       }
     </style>
   </head>
@@ -52,6 +97,8 @@
           <th scope="col">G</th>
           <th scope="col">E</th>
           <th scope="col">P</th>
+          <th scope="col">GF</th>
+          <th scope="col">GC</th>
           <th scope="col">Pts</th>
         </tr>
       </thead>
@@ -63,12 +110,17 @@
             <td>{{g}}</td>
             <td>{{e}}</td>
             <td>{{p}}</td>
+            <td>{{gf}}</td>
+            <td>{{gc}}</td>
             <td>{{pts}}</td>
           </tr>
         {{/each}}
       </tbody>
     </table>
-    
+
+    <!-- Scripts -->
     <script src="scripts.js"></script>
+
   </body>
+
 </html>

@@ -8,6 +8,8 @@ const dataSchema = new mongoose.Schema({
   g: String,
   e: String,
   p: String,
+  gf: String,
+  gc: String,
   pts: String,
 });
 
