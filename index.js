@@ -42,4 +42,4 @@ async function init() {
   }, process.env.UPDATE_INTERVAL);
 }
 
-init();
+module.exports = { init };

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tabla de datos</title>
+    <meta name="description" content="Tabla con datos de equipos de fútbol" />
+    <meta name="keywords" content="fútbol, equipos, tabla, estadísticas" />
+    <meta name="author" content="Julio Barrios" />
+    <style>
+      /* Estilos para la tabla */
+      table {
+        width: 80%;
+        margin: auto;
+        background-color: #f5f5f5;
+        border-collapse: collapse;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      th, td {
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      /* Estilos generales */
+      body {
+        background-color: #f1f1f1;
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Equipo</th>
+          <th>PJ</th>
+          <th>G</th>
+          <th>E</th>
+          <th>P</th>
+          <th>Pts</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each data}}
+          <tr>
+            <td>{{teamName}}</td>
+            <td>{{pj}}</td>
+            <td>{{g}}</td>
+            <td>{{e}}</td>
+            <td>{{p}}</td>
+            <td>{{pts}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </body>
+</html>
