@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <title>Tabla de datos</title>
-    {{!-- <link rel="icon" href="../../public/img/favicon.png" type="image/png"> --}}
     <meta name="description" content="Tabla con datos de equipos de fútbol" />
     <meta name="keywords" content="fútbol, equipos, tabla, estadísticas" />
     <meta name="author" content="Julio Barrios" />
@@ -40,16 +39,20 @@
   </head>
 
   <body>
-    {{!-- <meta property="og:image" content="../../public/img/soccer.jpg" /> --}}
+    <header>
+      <h1>Tabla de datos</h1>
+    </header>
+
     <table>
+      <caption>Tabla con datos de equipos de fútbol</caption>
       <thead>
         <tr>
-          <th>Equipo</th>
-          <th>PJ</th>
-          <th>G</th>
-          <th>E</th>
-          <th>P</th>
-          <th>Pts</th>
+          <th scope="col">Equipo</th>
+          <th scope="col">PJ</th>
+          <th scope="col">G</th>
+          <th scope="col">E</th>
+          <th scope="col">P</th>
+          <th scope="col">Pts</th>
         </tr>
       </thead>
       <tbody>
@@ -65,5 +68,7 @@
         {{/each}}
       </tbody>
     </table>
+    
+    <script src="scripts.js"></script>
   </body>
 </html>
