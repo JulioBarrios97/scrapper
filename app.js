@@ -12,7 +12,7 @@ const client = new MongoClient(process.env.MONGODB_URI);
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
 
-app.get("/table", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     await client.connect(process.env.MONGODB_URI);
     const db = client.db("test");
