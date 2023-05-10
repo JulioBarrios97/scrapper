@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tabla de posiciones del fútbol argentino">
+  <meta name="keywords" content="fútbol, argentina, posiciones, liga">
+  <title>Tabla de posiciones del fútbol argentino</title>
+</head>
+
+<body>
+  <h1>Tabla de posiciones del fútbol argentino</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Posición</th>
+        <th>Equipo</th>
+        <th>PJ</th>
+        <th>G</th>
+        <th>E</th>
+        <th>P</th>
+        <th>Pts</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each data}}
+      <tr class="{{#ifCond @index '==' 0}}champion{{else ifCond @index '<=' 3}}top{{else ifCond @index '>=' (data.length - 3)}}bottom{{/ifCond}}">
+        <td>{{@index}}</td>
+        <td>{{this.teamName}}</td>
+        <td>{{this.pj}}</td>
+        <td>{{this.g}}</td>
+        <td>{{this.e}}</td>
+        <td>{{this.p}}</td>
+        <td>{{this.pts}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <script>
+    function responsiveTable() {
+      const mq = window.matchMedia('(max-width: 767px)');
+      if (mq.matches) {
+        // ocultar columnas que no son importantes en dispositivos móviles
+        document.querySelectorAll('th:nth-child(n+4),td:nth-child(n+4)').forEach(el => {
+          el.style.display = 'none';
+        });
+      }
+    }
+
+    window.addEventListener('load', responsiveTable);
+    window.addEventListener('resize', responsiveTable);
+  </script>
+</body>
+
+</html>
